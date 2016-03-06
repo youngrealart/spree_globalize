@@ -21,7 +21,7 @@
 
           <div class="panel-body">
             <% if @resource.class.columns_hash[attr.to_s].type == :text %>
-              <%= g.text_area attr, class: 'form-control', rows: 4 %>
+              <%= g.cktext_area :description, class: 'form-control', :ckeditor => {:language => I18n.locale, :toolbar => 'mini', :height => 450} %>
             <% else %>
               <%= g.text_field attr, class: 'form-control' %>
             <% end %>
